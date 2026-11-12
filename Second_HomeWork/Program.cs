@@ -26,7 +26,7 @@ Console.WriteLine("<=== Workshop Tool Control ===>");
             int choice = Convert.ToInt32(Console.ReadLine());
 
             switch (choice)
-                            {
+            {
                 case 1:
                     AddTool(nombres, categorias, estados, ids, categoryCatalog, stateCatalog);
                     break;
@@ -57,8 +57,33 @@ Console.WriteLine("<=== Workshop Tool Control ===>");
                     break;
             }
         }
+
+
+        catch (FormatException)
+        {
+            Console.WriteLine("Error: you must enter a valid number.");
+        }
+
+        catch (KeyNotFoundException)
+        {
+            Console.WriteLine("Error: the ID you entered does not exist. Please try again.");
+        }
+
+        catch (ArgumentOutOfRangeException)
+        {
+            Console.WriteLine("Error: the ID you entered is out of range. Please try again.");
+        }
+
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error: " + ex.Message);
+        }
     }
 
-
-
+    Console.WriteLine("Goodbye!");
 }
+catch (Exception ex)
+{
+    Console.WriteLine("An unexpected error occurred: " + ex.Message);
+}
+
