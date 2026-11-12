@@ -1,8 +1,8 @@
-﻿try 
-{ 
-  Console.WriteLine("<=== Workshop Tool Control ===>");
-    Dictionary<int, string> names = new Dictionary<int, string> ();
-    Dictionary<int, string> categories = new Dictionary<int, string> ();
+﻿try
+{
+    Console.WriteLine("<=== Workshop Tool Control ===>");
+    Dictionary<int, string> names = [];
+    Dictionary<int, string> categories = new Dictionary<int, string>();
     Dictionary<int, string> states = new Dictionary<int, string>();
     List<int> ids = new List<int>();
 
@@ -49,7 +49,7 @@
                         ids.Add(id);
                         names.Add(id, name.Trim());
                         categories.Add(id, category);
-                        states.Add(id, stateCatalog[0]); 
+                        states.Add(id, stateCatalog[0]);
 
                         Console.WriteLine("Tool registered with ID " + id);
                         break;
@@ -205,6 +205,7 @@
                     Console.WriteLine("Invalid option. Please try again.");
                     break;
             }
+        }
 
         catch (FormatException)
         {
